@@ -10,7 +10,7 @@ int main()
 	// initialize our Mersenne Twister with the std::seed_seq
 	std::mt19937 mt{ seedSequence }; // initialize our Mersenne Twister with the std::seed_seq
 
-	// Create a reusable random number generator that generates uniform numbers between 1 and 6
+	// Create a reusable random number generator that generates uniform numbers between 1 and 100
 	std::uniform_int_distribution<> randomRoll{ 1, 100 };
 
 	std::cout << "Let's play a game. I'm thinking of a number. You have 7 tries to guess what it is.\n";
