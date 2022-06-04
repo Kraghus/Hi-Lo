@@ -22,19 +22,21 @@ int main()
 		std::cout << "Guess #" << guesses << ": ";
 		int userNumber{};
 		std::cin >> userNumber;
+		{
 
-		if (userNumber == randomNumber)
-		{
-			std::cout << "Correct! You win!\n";
-			break;
-		}
-		else if (userNumber > randomNumber)
-		{
-			std::cout << "Your guess is too high.\n";
-		}
-		else
-		{
-			std::cout << "Your guess is too low.\n";
+			if (userNumber == randomNumber)
+			{
+				std::cout << "Correct! You win!\n";
+				return 0;
+			}
+			else if (userNumber > randomNumber)
+			{
+				std::cout << "Your guess is too high.\n";
+			}
+			else
+			{
+				std::cout << "Your guess is too low.\n";
+			}
 		}
 	}
 	std::cout << "Sorry, you lose. The correct number was " << randomNumber << ".\n";
