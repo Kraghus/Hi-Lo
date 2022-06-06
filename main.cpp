@@ -17,14 +17,26 @@ int main()
 		// call a mersenne twister and store it as an integer
 		int randomNumber{ (randomRoll(mt)) };
 
+		int getGuess{ randomNumber };
+
 		// user gets 7 tries to guess the number
 		for (int guesses{ 1 }; (guesses <= 7); ++guesses)
 		{
 			std::cout << "Guess #" << guesses << ": ";
 			int userNumber{};
 			std::cin >> userNumber;
-			{
 
+			// clear any extraneous input
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+			// tests and fixes failed extractions and overflow
+			if (!std::cin)
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
+
+			{
 				if (userNumber == randomNumber)
 				{
 					std::cout << "Correct! You win!\n\n";
@@ -66,7 +78,5 @@ int main()
 				continue;
 			}
 		}
-
-
 	}
 }
