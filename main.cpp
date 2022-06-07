@@ -40,7 +40,7 @@ int main()
 				if (userNumber == randomNumber)
 				{
 					std::cout << "Correct! You win!\n\n";
-					return 0;
+					break;
 				}
 				else if (userNumber > randomNumber)
 				{
@@ -51,10 +51,15 @@ int main()
 					std::cout << "Your guess is too low.\n\n";
 				}
 			}
+			if ((guesses == 7) && (userNumber != randomNumber))
+			{
+				std::cout << "...........................................\n";
+				std::cout << "Sorry, you lose. The correct number was " << randomNumber << ".\n";
+				std::cout << "...........................................\n\n";
+			}
 		}
-		std::cout << "...........................................\n";
-		std::cout << "Sorry, you lose. The correct number was " << randomNumber << ".\n";
-		std::cout << "...........................................\n\n";
+		
+
 
 		while (true)
 		{
@@ -62,7 +67,7 @@ int main()
 			char yesOrNo{};
 			std::cin >> yesOrNo;
 
-		
+
 			if ((yesOrNo == 'y') || (yesOrNo == 'Y'))
 			{
 				break;
