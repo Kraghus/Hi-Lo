@@ -1,5 +1,6 @@
 #include <iostream>
 #include <random>
+#include "cleanup.h"
 #include "mt.h"
 
 int main()
@@ -21,15 +22,8 @@ int main()
 			int userNumber{};
 			std::cin >> userNumber;
 
-			// clears any extraneous input
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-			// tests and fixes failed extractions and overflow
-			if (!std::cin)
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
+			// call function to cleanup input
+			inputCleanup();
 
 			{
 				if (userNumber == randomNumber)
@@ -62,15 +56,8 @@ int main()
 			char yesOrNo{};
 			std::cin >> yesOrNo;
 
-			// clears any extraneous input
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-			// tests and fixes failed extractions and overflow
-			if (!std::cin)
-			{
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			}
+			// call function to cleanup input
+			inputCleanup();			
 
 			if ((yesOrNo == 'y') || (yesOrNo == 'Y'))
 			{
