@@ -1,5 +1,5 @@
 #include <iostream>
-#include "cleanup.h"
+#include "io.h"
 
 // perform cleanup function for input
 void inputCleanup()

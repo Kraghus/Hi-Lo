@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-#include "cleanup.h"
+#include "io.h"
 #include "mt.h"
 
 int main()
@@ -47,32 +47,12 @@ int main()
 				std::cout << "...........................................\n\n";
 			}
 		}
-
-
-
-		while (true)
-		{
-			std::cout << "Would you like to play again? Enter 'Y' for YES or 'N' for NO.\n";
-			char yesOrNo{};
-			std::cin >> yesOrNo;
-
-			// call function to cleanup input
-			inputCleanup();			
-
-			if ((yesOrNo == 'y') || (yesOrNo == 'Y'))
-			{
-				break;
-			}
-			else if ((yesOrNo == 'n') || (yesOrNo == 'N'))
-			{
-				std::cout << "Thank you for playing Hi-Lo!\n";
-				return 0;
-			}
-			else
-			{
-				std::cout << "Invalid input detected. Please try again!\n";
-				continue;
-			}
-		}
+		bool playAgain{ askPlayAgain() };
+		if (playAgain)
+			continue;
+		else
+			return 0;
 	}
+	
+
 }

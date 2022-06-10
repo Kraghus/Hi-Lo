@@ -21,12 +21,15 @@
     <ClCompile Include="cleanup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cleanup.h">
+    <ClInclude Include="io.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
