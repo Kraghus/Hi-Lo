@@ -10,8 +10,8 @@ bool getGuesses(int randomNumber)
 		std::cout << "Guess #" << guesses << ": ";
 		int userNumber{};
 		std::cin >> userNumber;
-
 		// call function to cleanup input
+
 		inputCleanup();
 		{
 			if (userNumber == randomNumber)
@@ -21,10 +21,12 @@ bool getGuesses(int randomNumber)
 			else if (userNumber > randomNumber)
 			{
 				std::cout << "Your guess is too high.\n\n";
+				continue;
 			}
 			else if (userNumber < randomNumber)
 			{
 				std::cout << "Your guess is too low.\n\n";
+				continue;
 			}
 		}
 		if ((guesses == 7) && (userNumber != randomNumber))
