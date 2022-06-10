@@ -7,13 +7,11 @@ int main()
 {
 	while (true)
 	{
-		std::cout << "*********************************************************************************\n";
-		std::cout << "Let's play Hi-Lo! I'm thinking of a number. You have 7 tries to guess what it is.\n\n";
-
 		// call a mersenne twister and store it as an integer
 		int randomNumber{ (randomRoll(mt)) };
 
-		int getGuess{ randomNumber };
+		std::cout << "*********************************************************************************\n";
+		std::cout << "Let's play Hi-Lo! I'm thinking of a number. You have 7 tries to guess what it is.\n\n";
 
 		// user gets 7 tries to guess the number
 		for (int guesses{ 1 }; (guesses <= 7); ++guesses)
